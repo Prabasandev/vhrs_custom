@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include vhrs_custom *.css
+recursive-include vhrs_custom *.csv
+recursive-include vhrs_custom *.html
+recursive-include vhrs_custom *.ico
+recursive-include vhrs_custom *.js
+recursive-include vhrs_custom *.json
+recursive-include vhrs_custom *.md
+recursive-include vhrs_custom *.png
+recursive-include vhrs_custom *.py
+recursive-include vhrs_custom *.svg
+recursive-include vhrs_custom *.txt
+recursive-exclude vhrs_custom *.pyc
