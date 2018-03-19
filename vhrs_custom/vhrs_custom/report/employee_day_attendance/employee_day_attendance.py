@@ -60,14 +60,16 @@ def execute(filters=None):
                     row += [att_details.status]
                 else:
                     row += [""]
-              
-                in_time = time.strptime(att_details.in_time, '%H:%M:%S')
-                max_time = time.strptime('09:10:00', '%H:%M:%S') 
-                if in_time >= max_time:
-                    row += ["Late"]
+
+                if att_details.in_time:
+                    in_time = time.strptime(att_details.in_time, '%H:%M:%S')
+                    max_time = time.strptime('09:10:00', '%H:%M:%S') 
+                    if in_time >= max_time:
+                        row += ["Late"]
+                    else:
+                        row += [""]    
                 else:
-                    row += [""]    
-                
+                        row += ["Failed to Punch"] 
 
             else:
                 row +=["","","","Absent",""]
@@ -108,4 +110,3 @@ def check_leave_record(employee, date):
             
 
         return status,leave_type 
-
